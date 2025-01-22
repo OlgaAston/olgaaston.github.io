@@ -88,3 +88,12 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(25px);
 }
+
+/* Скрытие контента */
+.resume-content {
+    display: none;
+}
+
+.resume-content.active {
+    display: block;
+}
