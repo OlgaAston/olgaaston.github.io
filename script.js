@@ -1,9 +1,3 @@
-// Карта языков с соответствующими файлами
-const contentMap = {
-    RUS: './ru.html', // Путь к русскому резюме
-    ENG: './en.html', // Путь к английскому резюме
-};
-
 // Получение элементов
 const toggle = document.getElementById('language-toggle');
 const label = document.getElementById('language-label');
