@@ -1,49 +1,29 @@
+/* Основные стили */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
-    background: #333;
-    color: white;
-    padding: 1rem;
-  }
-  
-  header nav button {
-    margin-right: 10px;
-    padding: 0.5rem 1rem;
-    background: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  header nav button:hover {
-    background: #777;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #f4f4f4;
-  }
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-/* Стили для переключателя */
+header {
+    background: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .language-switch {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: Arial, sans-serif;
     font-size: 18px;
-    margin: 20px;
 }
 
+/* Стили для переключателя */
 .switch {
     position: relative;
     display: inline-block;
@@ -82,18 +62,14 @@ body {
 }
 
 input:checked + .slider {
-    background-color: #4caf50;
+    background-color: #333;
 }
 
 input:checked + .slider:before {
     transform: translateX(25px);
 }
 
-/* Скрытие контента */
-.resume-content {
-    display: none;
-}
-
-.resume-content.active {
-    display: block;
+/* Стили для контента */
+main {
+    padding: 20px;
 }
