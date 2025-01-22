@@ -18,7 +18,9 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/99626066" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-    
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
@@ -26,120 +28,23 @@
 </head>
 <body>
     <header>
-        <div class="language-switcher">
+        <div class="language-switch">
             <label class="switch">
                 <input type="checkbox" id="language-toggle">
                 <span class="slider"></span>
             </label>
-            <span class="language-label" id="language-label">ENG</span>
+            <span id="language-label">ENG</span>
         </div>
     </header>
-
-    <main>
-        <h1>Welcome to My Resume</h1>
-        <p>This is the English version of my resume.</p>
+    <main id="content">
+        <!-- Здесь будет загружаться содержимое резюме -->
     </main>
-
-    <script>
-        // Language toggle logic
-        const languageToggle = document.getElementById('language-toggle');
-        const languageLabel = document.getElementById('language-label');
-
-        // Check the current URL to determine the active language
-        const currentLanguage = window.location.pathname.includes('ru.html') ? 'RUS' : 'ENG';
-
-        // Set the initial state of the switcher
-        languageToggle.checked = currentLanguage === 'RUS';
-        languageLabel.textContent = currentLanguage;
-
-        // Event listener for toggle change
-        languageToggle.addEventListener('change', () => {
-            const newLanguage = languageToggle.checked ? 'RUS' : 'ENG';
-            languageLabel.textContent = newLanguage;
-
-            // Redirect to the corresponding page
-            if (newLanguage === 'RUS') {
-                window.location.href = 'ru.html';
-            } else {
-                window.location.href = 'en.html';
-            }
-        });
-    </script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f4f4f4;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .language-switcher {
-            display: flex;
-            align-items: center;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 24px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: #4caf50;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .language-label {
-            font-size: 16px;
-            font-weight: bold;
-        }
-    </style>
+    <script src="script.js"></script>
 </body>
 </html>
+
+ 
+   
 
 
 
