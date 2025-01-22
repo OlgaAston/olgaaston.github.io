@@ -1,15 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const content = document.getElementById("content");
-    const loadContent = (lang) => {
-      fetch(`${lang}.html`)
+
+// Получаем элементы
+const toggle = document.getElementById('language-toggle');
+const label = document.getElementById('language-label');
+const content = document.getElementById('content');
+
+// Функция для загрузки контента
+function loadContent(language) {
+    fetch(contentMap[language])
         .then(response => response.text())
-        .then(data => content.innerHTML = data)
-        .catch(() => content.innerHTML = "<p>Error loading content</p>");
-    };
-  
-    document.getElementById("lang-ru").addEventListener("click", () => loadContent("ru"));
-    document.getElementById("lang-en").addEventListener("click", () => loadContent("en"));
-  
-    // Загрузка контента по умолчанию
-    loadContent("en");
-  });
+        .then(data => {
+            content.innerHTML = data;
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
+
+// Инициализация
+let currentLanguage = 'ENG'; // Язык по умолчанию
+loadContent(currentLanguage);
+
+// Событие переключения
+toggle.addEventListener('change', () => {
+    currentLanguage = toggle.checked ? 'RUS' : 'ENG';
+    label.textContent = currentLanguage;
+    loadContent(currentLanguage);
+});
