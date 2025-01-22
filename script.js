@@ -7,34 +7,24 @@ const contentMap = {
 // Получение элементов
 const toggle = document.getElementById('language-toggle');
 const label = document.getElementById('language-label');
-const content = document.getElementById('content');
+const ruContent = document.getElementById('resume-ru');
+const enContent = document.getElementById('resume-en');
 
-// Функция для загрузки содержимого
-function loadContent(language) {
-    const filePath = contentMap[language];
-    fetch(filePath)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Ошибка загрузки файла: ${filePath}`);
-            }
-            return response.text();
-        })
-        .then((data) => {
-            content.innerHTML = data;
-        })
-        .catch((error) => {
-            console.error('Ошибка загрузки контента:', error);
-            content.innerHTML = `<p>Не удалось загрузить резюме. Попробуйте позже.</p>`;
-        });
+// Функция для переключения языка
+function switchLanguage() {
+    if (toggle.checked) {
+        label.textContent = 'RUS';
+        ruContent.classList.add('active');
+        enContent.classList.remove('active');
+    } else {
+        label.textContent = 'ENG';
+        enContent.classList.add('active');
+        ruContent.classList.remove('active');
+    }
 }
 
-// Инициализация
-let currentLanguage = 'ENG'; // Язык по умолчанию
-loadContent(currentLanguage);
+// Инициализация (по умолчанию английский язык)
+switchLanguage();
 
-// Событие переключения языка
-toggle.addEventListener('change', () => {
-    currentLanguage = toggle.checked ? 'RUS' : 'ENG';
-    label.textContent = currentLanguage;
-    loadContent(currentLanguage);
-});
+// Событие переключения
+toggle.addEventListener('change', switchLanguage);
