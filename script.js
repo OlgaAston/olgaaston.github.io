@@ -1,24 +1,38 @@
-// Получение элементов
+// Элементы DOM
 const toggle = document.getElementById('language-toggle');
 const label = document.getElementById('language-label');
-const ruContent = document.getElementById('resume-ru');
-const enContent = document.getElementById('resume-en');
+const content = document.getElementById('content');
 
-// Функция для переключения языка
-function switchLanguage() {
-    if (toggle.checked) {
-        label.textContent = 'RUS';
-        ruContent.classList.add('active');
-        enContent.classList.remove('active');
-    } else {
-        label.textContent = 'ENG';
-        enContent.classList.add('active');
-        ruContent.classList.remove('active');
-    }
+// URL страниц
+const pages = {
+    en: 'en.html',
+    ru: 'ru.html',
+};
+
+// Загрузка контента
+function loadContent(language) {
+    fetch(pages[language])
+        .then((response) => {
+            if (!response.ok) throw new Error('Ошибка загрузки контента');
+            return response.text();
+        })
+        .then((html) => {
+            content.innerHTML = html;
+        })
+        .catch((error) => {
+            content.innerHTML = `<p style="color: red;">Не удалось загрузить контент: ${error.message}</p>`;
+        });
 }
 
-// Инициализация (по умолчанию английский язык)
-switchLanguage();
+// Переключение языка
+function switchLanguage() {
+    const language = toggle.checked ? 'ru' : 'en';
+    label.textContent = toggle.checked ? 'RUS' : 'ENG';
+    loadContent(language);
+}
 
-// Событие переключения
+// Начальная загрузка (английский по умолчанию)
+loadContent('en');
+
+// Обработчик переключения
 toggle.addEventListener('change', switchLanguage);
