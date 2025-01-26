@@ -26,12 +26,12 @@ function loadContent(language) {
 
 // Переключение языка
 function switchLanguage() {
-    const language = toggle.checked ? 'en' : 'ru';
+    const language = toggle.checked ? 'ru' : 'en';
     loadContent(language);
 }
 
 // Начальная загрузка (английский по умолчанию)
-loadContent('ru');
+loadContent('en');
 
 // Обработчик переключения
 toggle.addEventListener('change', switchLanguage);
