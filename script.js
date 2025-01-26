@@ -1,6 +1,7 @@
 // Элементы DOM
 const toggle = document.getElementById('language-toggle');
-const label = document.getElementById('language-label');
+const labelLeft = document.getElementById('language-label-left');
+const labelRight = document.getElementById('language-label-right');
 const content = document.getElementById('content');
 
 // URL страниц
@@ -24,14 +25,27 @@ function loadContent(language) {
         });
 }
 
+// Обновление текста подписей
+function updateLabels(language) {
+    if (language === 'en') {
+        labelLeft.textContent = 'ENG';
+        labelRight.textContent = 'RUS';
+    } else {
+        labelLeft.textContent = 'АНГ';
+        labelRight.textContent = 'РУС';
+    }
+}
+
 // Переключение языка
 function switchLanguage() {
     const language = toggle.checked ? 'ru' : 'en';
+    updateLabels(language);
     loadContent(language);
 }
 
 // Начальная загрузка (английский по умолчанию)
 loadContent('en');
+updateLabels('en');
 
 // Обработчик переключения
 toggle.addEventListener('change', switchLanguage);
