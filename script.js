@@ -27,7 +27,6 @@ function loadContent(language) {
 // Переключение языка
 function switchLanguage() {
     const language = toggle.checked ? 'ru' : 'en';
-    label.textContent = toggle.checked ? 'RUS' : 'ENG';
     loadContent(language);
 }
 
