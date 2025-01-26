@@ -31,7 +31,7 @@ function switchLanguage() {
 }
 
 // Начальная загрузка (английский по умолчанию)
-loadContent('en');
+loadContent('ru');
 
 // Обработчик переключения
 toggle.addEventListener('change', switchLanguage);
