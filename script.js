@@ -31,8 +31,8 @@ function updateLabels(language) {
         labelLeft.textContent = 'ENG';
         labelRight.textContent = 'RUS';
     } else {
-        labelLeft.textContent = 'АНГ';
-        labelRight.textContent = 'РУС';
+        labelLeft.textContent = 'ENG';
+        labelRight.textContent = 'RUS';
     }
 }
 
