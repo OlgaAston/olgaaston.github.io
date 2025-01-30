@@ -14,7 +14,7 @@ header {
     max-width: 900px;
     padding: 10px 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
 }
 
