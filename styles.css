@@ -77,4 +77,5 @@ input:checked + .slider:before {
 /* Стили для контента */
 main {
     max-width: 900px;
+    margin-top: 0;
 }
