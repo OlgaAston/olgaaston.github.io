@@ -19,7 +19,6 @@ header {
 }
 
 .language-switch {
-    background: white;
     display: flex;
     align-items: center;
     gap: 10px;
