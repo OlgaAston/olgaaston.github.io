@@ -14,10 +14,18 @@ header {
     max-width: 900px;
     padding: 10px 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 
+.language-menu {
+    display: flex;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 900px;
+    padding: 10px 20px;
+}
+    
 .language-switch {
     display: flex;
     align-items: center;
