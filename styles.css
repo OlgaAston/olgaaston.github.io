@@ -1,4 +1,3 @@
-/* Основные стили */
 body {
     font-family: Arial, sans-serif;
     max-width: 900px;
@@ -20,23 +19,19 @@ header {
 
 .language-menu {
     display: flex;
-    display: flex;
     justify-content: flex-end;
-    max-width: 900px;
-    padding: 10px 20px;
-}
-    
+    background-color: white;
+    padding: 20px 20px 0;
+    margin-top: 20px;
+  }
+
 .language-switch {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 18px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
-/* Стили для переключателя */
 .switch {
     position: relative;
     display: inline-block;
@@ -82,7 +77,6 @@ input:checked + .slider:before {
     transform: translateX(25px);
 }
 
-/* Стили для контента */
 main {
     max-width: 900px;
    margin-top: 0px;
